@@ -59,8 +59,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -1351,26 +1356,130 @@ dialog.project-modal {
   }
 
   /* Responsive layout for Showcase on Tablet/Mobile */
-  .showcase-section {
-    height: auto;
-    padding: 80px 0;
-  }
   .showcase-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 20px;
+    width: 95%;
   }
+
   .showcase-text-col {
-    padding: 0;
-    gap: 40px;
+    padding: 50vh 0 80vh 0; /* Keep the sticky timeline active */
+    gap: 45vh;
   }
-  .showcase-text-block {
-    opacity: 1;
-    transform: none !important;
-    max-width: 100%;
-    text-align: center;
-    margin: 0 auto;
+
+  .showcase-text-block h2 {
+    font-size: 1.6rem;
   }
-  .showcase-phone-col {
-    display: none; /* Hide phone scroll animation on narrow screens for optimized reading layout */
+
+  .showcase-text-block p {
+    font-size: 0.9rem;
+  }
+
+  .phone-frame {
+    width: 180px;
+    height: 360px;
+    border-radius: 24px;
+    border-width: 7px;
+  }
+
+  .phone-app-screen {
+    height: 290px !important; /* Perfect scaled viewport height */
+  }
+
+  .phone-speaker {
+    width: 28px;
+    height: 3px;
+  }
+
+  .phone-camera {
+    width: 4px;
+    height: 4px;
+    left: calc(50% + 18px);
+  }
+
+  .phone-status-bar {
+    height: 18px;
+    font-size: 0.6rem;
+    padding: 0 10px;
+  }
+
+  .phone-nav-bar {
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  .phone-nav-icon {
+    font-size: 0.8rem;
+  }
+
+  /* Specific overrides for Mobile viewports (width <= 768px) */
+  @media (max-width: 768px) {
+    .showcase-container {
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 12px;
+    }
+
+    .showcase-text-col {
+      padding: 55vh 0 80vh 0;
+      gap: 40vh;
+    }
+
+    .showcase-text-block h2 {
+      font-size: 1.15rem;
+    }
+
+    .showcase-text-block h3 {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .showcase-text-block p {
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .stage-indicator {
+      font-size: 0.7rem;
+      margin-bottom: 6px;
+    }
+
+    .phone-frame {
+      width: 110px;
+      height: 220px;
+      border-radius: 16px;
+      border-width: 4px;
+    }
+
+    .phone-app-screen {
+      height: 176px !important; /* Perfect mobile viewport scaled height */
+    }
+
+    .phone-speaker {
+      width: 16px;
+      height: 2px;
+      top: 2px;
+    }
+
+    .phone-camera {
+      width: 2px;
+      height: 2px;
+      top: 2px;
+      left: calc(50% + 12px);
+    }
+
+    .phone-status-bar {
+      height: 14px;
+      font-size: 0.45rem;
+      padding: 0 6px;
+    }
+
+    .phone-nav-bar {
+      height: 20px;
+      font-size: 0.55rem;
+    }
+
+    .phone-nav-icon {
+      font-size: 0.55rem;
+    }
   }
 }
