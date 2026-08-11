@@ -507,10 +507,21 @@ function initScrollEffects() {
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
       navMenu.classList.toggle('open');
+      const isOpened = navMenu.classList.contains('open');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        icon.className = isOpened ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => navMenu.classList.remove('open'));
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+          icon.className = 'fa-solid fa-bars';
+        }
+      });
     });
   }
 
